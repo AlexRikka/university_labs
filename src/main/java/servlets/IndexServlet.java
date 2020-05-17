@@ -35,7 +35,6 @@ public class IndexServlet extends HttpServlet {
         requestDispatcher.forward(req, resp);
     }
 
-
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         String login = req.getParameter("login");
@@ -71,7 +70,6 @@ public class IndexServlet extends HttpServlet {
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
-
             } else {
                 errmsg = "USER NOT FOUND";
                 context.setAttribute("user_valid", "user_not_found");
@@ -84,12 +82,10 @@ public class IndexServlet extends HttpServlet {
                 } catch (ServletException | IOException e) {
                     e.printStackTrace();
                 }
-
             }
         } catch (SQLException e) {
             e.printStackTrace();
         }
-
     }
 }
 
